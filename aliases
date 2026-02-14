@@ -5,5 +5,71 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
 
-# NOTE: On Q3 2021, Le Wagon decided to change the Web Dev curriculum default text editor
-alias stt="echo 'Launching VS Code instead of Sublime Text... (cf ~/.aliases)' && code ."
+# ZSH ALIASES
+
+# list
+alias lk='ls -1' 
+
+# CodeGpt
+alias h='python3 /Users/jacksharples/code/home/learner/main.py h s'
+alias hs='python3 /Users/jacksharples/code/home/learner/main.py h s'
+alias hm='python3 /Users/jacksharples/code/home/learner/main.py h m'
+alias hl='python3 /Users/jacksharples/code/home/learner/main.py h l'
+alias hu='python3 /Users/jacksharples/code/home/learner/main.py h u'
+alias e='python3 /Users/jacksharples/code/home/learner/main.py e s'
+alias es='python3 /Users/jacksharples/code/home/learner/main.py e s'
+alias em='python3 /Users/jacksharples/code/home/learner/main.py e m'
+alias el='python3 /Users/jacksharples/code/home/learner/main.py e l'
+alias eu='python3 /Users/jacksharples/code/home/learner/main.py e u'
+alias a='python3 /Users/jacksharples/code/home/learner/main.py a s'
+alias g='python3 /Users/jacksharples/code/home/learner/main.py g s'
+
+# Previous directories
+alias pd='dirs -v'
+function po() {
+    local dir_num="$1"
+    local target_dir=$(dirs -v | grep "^${dir_num}" | awk '{print $2}')
+    if [ -n "$target_dir" ]; then
+	target_dir="${target_dir/#\~/$HOME}"
+        cd "$target_dir"
+    else
+        echo "Directory number not found."
+    fi
+}
+
+# Starred directories
+function sadd() {
+    local star_file="$HOME/.stardirs"
+    local current_dir=$(pwd)
+    echo "$current_dir" >> "$star_file"
+}
+
+function sd() {
+    local star_file="$HOME/.stardirs"
+    if [ -f "$star_file" ]; then
+        awk '{print NR-1 " " $0}' "$star_file"
+    else
+        echo "No starred directories found."
+    fi
+}
+
+function so() {
+    local dir_num="$1"
+    local star_file="$HOME/.stardirs"
+    if [ -f "$star_file" ]; then
+        local target_dir=$(awk -v num="$dir_num" 'NR==num+1 {print}' "$star_file")
+        if [ -n "$target_dir" ]; then
+            cd "$target_dir"
+        else
+            echo "Directory number not found."
+        fi
+    else
+        echo "No starred directories found."
+    fi
+}
+
+# pip
+alias pipi='pip install'
+alias pipr='pip install -r requirements.txt'
+# Misc
+alias reloadz='source ~/.zshrc'

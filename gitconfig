@@ -12,16 +12,19 @@
 [core]
   pager = less -FRSX
   editor = code --wait
+	excludesfile = ~/.gitignore_global
 
 [alias]
   co = checkout
   st = status -sb
   br = branch
   ci = commit
+  cm = commit -m
   fo = fetch origin
   d = !git --no-pager diff
   dt  = difftool
   stat = !git --no-pager diff --stat
+  cob = checkout -b
 
   # Set remotes/origin/HEAD -> defaultBranch (copied from https://stackoverflow.com/a/67672350/14870317)
   remoteSetHead = remote set-head origin --auto
@@ -60,5 +63,12 @@
 [init]
   defaultBranch = master
 [user]
-	email = jack@wondersofmaths.com
-	name = Jack Sharples
+	email = 126489321+jacksharpleswom@users.noreply.github.com
+	name = jacksharpleswom
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = osxkeychain

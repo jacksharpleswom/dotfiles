@@ -2,13 +2,13 @@
     "[python]": {
         "editor.bracketPairColorization.enabled": false,
         "editor.guides.bracketPairs": false,
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "editor.bracketPairColorization.enabled": true,
     "editor.detectIndentation": false,
     "editor.fontSize": 14,
     "editor.guides.bracketPairs": true,
-    "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderControlCharacters": true,
     "editor.rulers": [
@@ -56,11 +56,10 @@
         "**/tmp/**": true,
         "**/vendor/**": true
     },
-    "git.enabled": false,
     "notebook.diff.ignoreMetadata": true,
     "notebook.lineNumbers": "on",
     "notebook.markup.fontSize": 13,
-    "python.defaultInterpreterPath": "~/.pyenv/shims/python",
+    "python.defaultInterpreterPath": "/Users/jacksharples/.pyenv/shims/python",
     "python.formatting.provider": "yapf",
     "python.languageServer": "Pylance",
     "python.linting.enabled": false,
@@ -84,4 +83,98 @@
     "workbench.settings.useSplitJSON": true,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.panel.defaultLocation": "right",
-}
+    "editor.inlineSuggest.enabled": true,
+
+    "vim.insertModeKeyBindings": [
+      {
+          "before": ["k", "j"],
+          "after": ["<esc>"]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["J"],
+        "after": ["5", "j"]
+      },
+      {
+        "before": ["K"],
+        "after": ["5", "k"]
+      },
+      {
+        "before": ["<Leader>","j"],
+        "after": ["J"]
+      },
+      {
+        "before": ["K"],
+        "after": ["5", "k"]
+      },
+      {
+        "before": ["K"],
+        "after": ["5", "k"]
+      },
+    ],
+    "vim.leader": "<Space>",
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": true,
+      "plaintext": false,
+      "markdown": false
+    },
+    "files.autoSave": "afterDelay",
+    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "GitHub Light",
+    "workbench.colorCustomizations": {
+      "[Material Theme Ocean High Contrast]": {
+        "activityBarBadge.background": "#00BCD4",
+        "activityBar.activeBorder": "#00BCD4",
+        "list.activeSelectionForeground": "#00BCD4",
+        "list.inactiveSelectionForeground": "#00BCD4",
+        "list.highlightForeground": "#00BCD4",
+        "scrollbarSlider.activeBackground": "#00BCD450",
+        "editorSuggestWidget.highlightForeground": "#00BCD4",
+        "textLink.foreground": "#00BCD4",
+        "progressBar.background": "#00BCD4",
+        "pickerGroup.foreground": "#00BCD4",
+        "tab.activeBorder": "#00BCD4",
+        "notificationLink.foreground": "#00BCD4",
+        "editorWidget.resizeBorder": "#00BCD4",
+        "editorWidget.border": "#00BCD4",
+        "settings.modifiedItemIndicator": "#00BCD4",
+        "settings.headerForeground": "#00BCD4",
+        "panelTitle.activeBorder": "#00BCD4",
+        "breadcrumb.activeSelectionForeground": "#00BCD4",
+        "menu.selectionForeground": "#00BCD4",
+        "menubar.selectionForeground": "#00BCD4",
+        "editor.findMatchBorder": "#00BCD4",
+        "selection.background": "#00BCD440",
+        "statusBarItem.remoteBackground": "#00BCD4"
+      }
+    },
+    "materialTheme.accent": "Cyan",
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnPaste": true,
+    "jupyter.runStartupCommands": "",
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "window.zoomLevel": -1,
+    "jupyter.askForKernelRestart": false,
+    "editor.accessibilitySupport": "off",
+    "vim.highlightedyank.duration": 500,
+    "vim.highlightedyank.enable": true,
+    "vim.sneak": true,
+    "vim.sneakReplacesF": true,
+    "vim.useSystemClipboard": true,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "interactiveWindow.executeWithShiftEnter": true,
+    "markdown-preview-enhanced.enablePreviewZenMode": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "jupyter.widgetScriptSources": [
+      "jsdelivr.com",
+      "unpkg.com"
+    ],
+    "debug.console.acceptSuggestionOnEnter": "on",
+    "debug.console.fontSize": 14,
+    "github.copilot.nextEditSuggestions.enabled": true,
+
+    }
